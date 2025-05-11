@@ -1,0 +1,547 @@
+{
+	"info": {
+		"_postman_id": "32733c87-c2d8-4527-b2dd-697023913a6d",
+		"name": "blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24528147",
+		"_collection_link": "https://crimson-comet-179154.postman.co/workspace/Scalable~4e7f4c01-4e9f-41df-bb83-f8c740507d42/collection/24528147-32733c87-c2d8-4527-b2dd-697023913a6d?action=share&source=collection_link&creator=24528147"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "post users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1efbfcc6-8da3-4820-a3dc-225a4ed4e70c",
+									"disabled": true
+								},
+								{
+									"key": "user[name]",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "user[email]",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "user[password]",
+									"value": "test123",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:3000/users"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test12@gmail.com\",\r\n    \"password\": \"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "get users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:3000/users"
+					},
+					"response": []
+				},
+				{
+					"name": "edit users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsImVtYWlsIjoidGVzdDhAZ21haWwuY29tIiwiZXhwIjoxNzQ2OTE1MTIzfQ.R4llRJFjJ8fgjGxKyInEYtiqB8_y1KCBCRIUYzTlhik",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\":\"mostafa\",\r\n  \"image\":\"image\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTAsImVtYWlsIjoidGVzdDhAZ21haWwuY29tIiwiZXhwIjoxNzQ2OTA3MTExfQ.JmYB6oUfz4KBQ3Eqej8hCLhtSeMj-5TTgAedDwlMTfc",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:3000/users"
+					},
+					"response": []
+				},
+				{
+					"name": "change_password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":10,\r\n    \"email\": \"test8@gmail.com\",\r\n    \"old_password\": \"test123\",\r\n    \"new_password\":\"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000/users/change_password"
+					},
+					"response": []
+				},
+				{
+					"name": "user profile",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6NDksImVtYWlsIjoidGVzdDEyQGdtYWlsLmNvbSIsImV4cCI6MTc0NzAwNDE2NH0.Rl0ildb1GE6GLRdZJVQs8slBxLTyQCy3jw1cafIxvW0",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:3000/users/profile"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "create post",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTMsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJleHAiOjE3NDY5OTAyMjB9.mtJ6iWA39xBatgXtaNOFNO0JxZ8FXOSP9eC2XzTiwTY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"How to Learn Rails 333\",\r\n  \"body\": \"Start with the official guides and build small projects.\",\r\n  \"tags\": [\"rails\", \"ruby\", \"webdev\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000/posts"
+					},
+					"response": []
+				},
+				{
+					"name": "edit post",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsImVtYWlsIjoidGVzdDhAZ21haWwuY29tIiwiZXhwIjoxNzQ2OTE1MTIzfQ.R4llRJFjJ8fgjGxKyInEYtiqB8_y1KCBCRIUYzTlhik",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"How to Learn Rails 2\",\r\n  \"body\": \"body edited.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000/posts/1"
+					},
+					"response": []
+				},
+				{
+					"name": "get all posts",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsImVtYWlsIjoidGVzdDhAZ21haWwuY29tIiwiZXhwIjoxNzQ2OTE1MTIzfQ.R4llRJFjJ8fgjGxKyInEYtiqB8_y1KCBCRIUYzTlhik",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:3000/posts",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "how",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get My Posts",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6NDksImVtYWlsIjoidGVzdDEyQGdtYWlsLmNvbSIsImV4cCI6MTc0NzAwNDE2NH0.Rl0ildb1GE6GLRdZJVQs8slBxLTyQCy3jw1cafIxvW0",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/posts/my_posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"my_posts"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tags",
+			"item": [
+				{
+					"name": "create tag",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsImVtYWlsIjoidGVzdDhAZ21haWwuY29tIiwiZXhwIjoxNzQ2OTE1MTIzfQ.R4llRJFjJ8fgjGxKyInEYtiqB8_y1KCBCRIUYzTlhik",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tag\": \"tag test\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000/posts/1/tags"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete tag",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsImVtYWlsIjoidGVzdDhAZ21haWwuY29tIiwiZXhwIjoxNzQ2OTE1MTIzfQ.R4llRJFjJ8fgjGxKyInEYtiqB8_y1KCBCRIUYzTlhik",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": "http://127.0.0.1:3000/posts/1/tags/4"
+					},
+					"response": []
+				},
+				{
+					"name": "edit tag",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsImVtYWlsIjoidGVzdDhAZ21haWwuY29tIiwiZXhwIjoxNzQ2OTE1MTIzfQ.R4llRJFjJ8fgjGxKyInEYtiqB8_y1KCBCRIUYzTlhik",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tag\": \"tag edited\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000/posts/1/tags/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "create Comment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTIsImVtYWlsIjoidGVzdDlAZ21haWwuY29tIiwiZXhwIjoxNzQ2OTY5MTM2fQ.OpP7FT41sFx6m8TrYYtcsREjeWJuDVjx0J0_6Gtjnao",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"body\": \"Great tips! Thanks for sharing.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000/posts/1/comments"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit comments",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTIsImVtYWlsIjoidGVzdDlAZ21haWwuY29tIiwiZXhwIjoxNzQ2OTY5MTM2fQ.OpP7FT41sFx6m8TrYYtcsREjeWJuDVjx0J0_6Gtjnao",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"body\": \"Start with the official guides and build small projects.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000//posts/1/comments/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsImVtYWlsIjoidGVzdDhAZ21haWwuY29tIiwiZXhwIjoxNzQ2OTE1MTIzfQ.R4llRJFjJ8fgjGxKyInEYtiqB8_y1KCBCRIUYzTlhik",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000//posts/1/comments/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
