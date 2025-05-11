@@ -69,7 +69,7 @@ The API will be accessible at: `http://localhost:3000`
 - **Redis** – Message broker for Sidekiq
 - **RSpec** – Testing framework
 - **Docker** – Containerized development
-- **Ccloudinary** - Cloud file storage for user image 
+- **Cloudinary** - Cloud file storage for user image 
 
 ---
 
